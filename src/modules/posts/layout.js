@@ -1,18 +1,18 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {Buttons} from './buttons'
-import {PostTitle} from './postTitle'
-import {PostFooter} from './postFooter'
+import {buttons} from './consts/index'
+import {PostTitle} from './components/postTitle'
+import {PostFooter} from './components/postFooter'
 
 export const PostsLayout = ({ handleChangePostsType, posts, postById, handleLoadNextPage }) => {
   
   
   return (
   <div>
-    <Buttons 
-      handleChangePostsType={handleChangePostsType}
-    />
+    <div style={{borderBottom: '#007bff solid 1px'}}>
+        {buttons.map(button => <button type="button" className={button.className} onClick={handleChangePostsType} value={button.value}>{button.text} </button>)}
+    </div>
     <div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
       <ol>
     {postById && postById.id}
