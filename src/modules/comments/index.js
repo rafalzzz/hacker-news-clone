@@ -1,24 +1,25 @@
 import React, { memo, useCallback } from 'react';
 import { PostsLayout } from './layout';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPostsStarted } from '../../store/posts/actions';
-import { selectPosts } from '../../store/posts/selectors';
+import { fetchPostsStarted } from '../../store/comments/actions';
+import { selectPostInfo, selectComments } from '../../store/comments/selectors';
 
-export const Posts = memo(() => {
+export const Comments = memo(() => {
 
     const dispatch = useDispatch();
-    const handleFetchPosts = useCallback((postsType, page) => {
-            dispatch(fetchPostsStarted({ type: postsType, page: page}));
+    const handleFetchComments = useCallback((id) => {
+            dispatch(fetchPostsStarted({ id: id }));
 }, []);
 
-const posts = useSelector(selectPosts);
+const postInfo = useSelector(selectPostInfo);
+const comments = useSelector(selectComments);
 /* const postById = useSelector(selectPostById(22002062)); */
 
 return (
     <PostsLayout
-    handleFetchPosts={handleFetchPosts}
-      posts={posts}
-      /* postById={postById} */
+      postInfo={postInfo}
+      handleFetchComments={handleFetchComments}
+      comments={comments}
     />
   );
 });

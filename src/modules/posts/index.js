@@ -12,7 +12,7 @@ export const Posts = memo(() => {
     const dispatch = useDispatch();
     const handleFetchPosts = useCallback((postsType, page) => {
             dispatch(fetchPostsStarted({ type: postsType, page: page}));
-}, []);
+    }, []);
 
   const handleChangePostsType = e => {
     setPostsType(e.target.value);
