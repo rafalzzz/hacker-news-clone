@@ -1,14 +1,11 @@
-import React, {useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {buttons} from './consts/index'
 import {PostTitle} from './components/postTitle'
 import {PostFooter} from './components/postFooter'
 
-export const PostsLayout = ({ handleFetchPosts, posts }) => {
-
-  const [postsType, setPostsType] = useState('news');
-  const [page, setPage] = useState(1)
+export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleFetchPosts, postsType, page, posts }) => {
 
   useEffect(() => {
     handleFetchPosts("news", 1)
@@ -17,17 +14,6 @@ export const PostsLayout = ({ handleFetchPosts, posts }) => {
   useEffect(() => {
     handleFetchPosts(postsType, page)
   }, [postsType, page]);
-
-  const handleChangePostsType = e => {
-    setPostsType(e.target.value);
-    setPage(1);
-    handleFetchPosts(e.target.value, page)
-  }
-
-  const handleLoadNextPage = (e) => {
-    setPage(page + 1);
-    handleFetchPosts(postsType, page)
-  }
 
   return (
     <div>
