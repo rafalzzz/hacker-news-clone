@@ -4,8 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {CommentsTitle} from './components/commentsTitle'
 import {CommentsFooter} from './components/commentsFooter'
 
-export const PostsLayout = ({ handleFetchComments, comments }) => {
+export const CommentsLayout = ({ handleFetchComments, comments }) => {
 
+
+  
   return (
     <div>
       <div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
@@ -20,11 +22,11 @@ export const PostsLayout = ({ handleFetchComments, comments }) => {
           added={time_ago}
         />
       </div>
-{      <div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
+      {<div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
         <ul>
       {comments &&
       comments.map(comment => (
-        <li className="font-weight-bold text-secondary text-left p-2" key={p.id} style={{fontSize: '18px'}}>
+        <li className="font-weight-bold text-secondary text-left p-2" key={comment.id} style={{fontSize: '16px'}}>
           <span>{comments.content}</span>
         </li>
       ))}

@@ -5,14 +5,14 @@ import {
 } from "./consts";
 
 
-export const fetchPostsStarted = payload => ({
+export const fetchCommentsStarted = payload => ({
     type: FETCH_COMMENTS_STARTED, 
     payload
 });
 
-export const fetchPostSuccess = payload => ({
+export const fetchCommentsSuccess = payload => ({
     type: FETCH_COMMENTS_SUCCESS,
     payload,
 });
 
-export const fetchPostFailure = () => ({type: FETCH_COMMENTS_FAILURE});
+export const fetchCommentsFailure = () => ({type: FETCH_COMMENTS_FAILURE});
