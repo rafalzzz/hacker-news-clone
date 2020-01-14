@@ -2,17 +2,23 @@ import React, { memo, useState, useCallback } from 'react';
 import { PostsLayout } from './layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPostsStarted } from '../../store/posts/actions';
+import { fetchCommentsStarted } from '../../store/comments/actions';
 import { selectPosts } from '../../store/posts/selectors';
 
 export const Posts = memo(() => {
 
   const [postsType, setPostsType] = useState('news');
   const [page, setPage] = useState(1)
+  const [postID, setPostID] = useState(0)
 
-    const dispatch = useDispatch();
-    const handleFetchPosts = useCallback((postsType, page) => {
-            dispatch(fetchPostsStarted({ type: postsType, page: page}));
-    }, []);
+  const dispatch = useDispatch();
+  const handleFetchPosts = useCallback((postsType, page) => {
+    dispatch(fetchPostsStarted({ type: postsType, page: page}));
+  }, []);
+
+  const handleFetchComments = useCallback((id) => {
+    dispatch(fetchCommentsStarted({ id: id }));
+  }, []);
 
   const handleChangePostsType = e => {
     setPostsType(e.target.value);
@@ -25,6 +31,11 @@ export const Posts = memo(() => {
     handleFetchPosts(postsType, page)
   }
 
+/*   const handleLoadComments = (id) => {
+    setPostID(id);
+    handleFetchComments(postID)
+  } */
+
 const posts = useSelector(selectPosts);
 /* const postById = useSelector(selectPostById(22002062)); */
 
@@ -33,6 +44,7 @@ return (
       handleChangePostsType={handleChangePostsType}
       handleLoadNextPage={handleLoadNextPage}
       handleFetchPosts={handleFetchPosts}
+      handleLoadComments={handleFetchComments}
       postsType={postsType}
       page={page}
       posts={posts}
