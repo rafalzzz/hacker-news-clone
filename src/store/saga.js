@@ -1,6 +1,8 @@
-import { all } from 'redux-saga/effects';
+import { fork } from 'redux-saga/effects';
 import { postsSaga } from './posts/saga';
+import { commentsSaga } from './comments/saga';
 
 export function* rootSaga(services = {}) {
-  yield all([postsSaga()]);
+  yield fork(postsSaga);
+  yield fork(commentsSaga);
 }

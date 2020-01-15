@@ -1,14 +1,18 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect } from 'react';
 
 import {CommentsTitle} from './components/commentsTitle'
 import {CommentsFooter} from './components/commentsFooter'
 
-export const CommentsLayout = ({ comments, postInfo }) => {
+export const CommentsLayout = ({ handleFetchComments, postID, comments, postInfo }) => {
+
+/*   useEffect(() => {
+    handleFetchComments(postID)
+  }, []); */
 
   return (
     <div>
       <div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
+        <h1>ASD</h1>
         <CommentsTitle 
           title={postInfo.title}
           domain={postInfo.domain}

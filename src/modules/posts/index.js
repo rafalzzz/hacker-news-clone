@@ -16,8 +16,8 @@ export const Posts = memo(() => {
     dispatch(fetchPostsStarted({ type: postsType, page: page}));
   }, []);
 
-  const handleFetchComments = useCallback((id) => {
-    dispatch(fetchCommentsStarted({ id: id }));
+  const handleFetchComments = useCallback((postID) => {
+    dispatch(fetchCommentsStarted({ id: postID }));
   }, []);
 
   const handleChangePostsType = e => {
@@ -31,10 +31,14 @@ export const Posts = memo(() => {
     handleFetchPosts(postsType, page)
   }
 
-/*   const handleLoadComments = (id) => {
+  const handleChangePostID = (id) => {
+    setPostID(id);
+  }
+
+  const handleLoadComments = (id) => {
     setPostID(id);
     handleFetchComments(postID)
-  } */
+  }
 
 const posts = useSelector(selectPosts);
 /* const postById = useSelector(selectPostById(22002062)); */
@@ -44,10 +48,12 @@ return (
       handleChangePostsType={handleChangePostsType}
       handleLoadNextPage={handleLoadNextPage}
       handleFetchPosts={handleFetchPosts}
-      handleLoadComments={handleFetchComments}
+      handleChangePostID={handleChangePostID}
       postsType={postsType}
       page={page}
       posts={posts}
+      postID={postID}
+      handleLoadComments={handleLoadComments}
 
       /* postById={postById} */
     />
