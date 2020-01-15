@@ -7,7 +7,7 @@ import {buttons} from './consts/index'
 import {PostsList} from './components/postsList'
 import {Comments} from '../comments/index'
 
-export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleFetchPosts, handleChangePostID, postsType, page, posts, handleLoadComments }) => {
+export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleFetchPosts, handleLoadComments, postsType, page, posts }) => {
 
   return (
     <div>
@@ -22,17 +22,15 @@ export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleF
             <PostsList
               handleLoadNextPage={handleLoadNextPage}
               handleFetchPosts={handleFetchPosts}
-              handleChangePostID={handleChangePostID}
+              handleLoadComments={handleLoadComments}
               posts={posts}
               postsType={postsType}
               page={page}
-              handleLoadComments={handleLoadComments}
             />
           </Route>
           <Route path="/item">
             <Comments
-/*               postID={postID} */
-            />
+          />
           </Route>
         </Switch>
       </div>

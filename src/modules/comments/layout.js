@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import {CommentsTitle} from './components/commentsTitle'
 import {CommentsFooter} from './components/commentsFooter'
 
-export const CommentsLayout = ({ handleFetchComments, postID, comments, postInfo }) => {
+import {commentsDivClassName, commentsDivStyles} from './consts/index'
 
-/*   useEffect(() => {
-    handleFetchComments(postID)
-  }, []); */
+import ReactHtmlParser from 'react-html-parser';
+
+export const CommentsLayout = ({ postInfo }) => {
 
   return (
     <div>
-      <div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
-        <h1>ASD</h1>
+      <div className="container text-center pt-3 pb-3" style={{marginTop: '10px', borderBottom: '#ebebeb solid 15px'}}>
         <CommentsTitle 
           title={postInfo.title}
           domain={postInfo.domain}
@@ -24,15 +23,35 @@ export const CommentsLayout = ({ handleFetchComments, postID, comments, postInfo
           added={postInfo.time_ago}
         />
       </div>
-      {<div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
-        <ul>
-      {comments &&
-      comments.map(comment => (
-        <li className="font-weight-bold text-secondary text-left p-2" key={comment.id} style={{fontSize: '16px'}}>
-          <span>{comments.content}</span>
-        </li>
+      {<div className="container text-left" style={{marginTop: '25px'}}>
+      {postInfo.comments &&
+      postInfo.comments.map(comment => (
+        <div className={commentsDivClassName} key={comment.id} style={commentsDivStyles}>
+          <div>
+            <p style={{fontSize: '14px'}}>{comment.user} {comment.time_ago}</p>
+            {ReactHtmlParser(comment.content)}
+          </div>
+          {comment.comments.map(comment => (
+          <div className={commentsDivClassName} key={comment.id} style={commentsDivStyles}>
+              <p style={{fontSize: '14px'}}>{comment.user} {comment.time_ago}</p>
+              {ReactHtmlParser(comment.content)}
+            {comment.comments.map(comment => (
+            <div className={commentsDivClassName} key={comment.id} style={commentsDivStyles}>
+                <p style={{fontSize: '14px'}}>{comment.user} {comment.time_ago}</p>
+                {ReactHtmlParser(comment.content)}
+              {comment.comments.map(comment => (
+              <div className={commentsDivClassName} key={comment.id} style={commentsDivStyles}>
+                  <p style={{fontSize: '14px'}}>{comment.user} {comment.time_ago}</p>
+                  {ReactHtmlParser(comment.content)}
+              </div>
       ))}
-        </ul>
+        </div>
+      ))}
+        </div>
+      ))}
+        </div>
+      ))}
+
       </div>}
     </div>
   )

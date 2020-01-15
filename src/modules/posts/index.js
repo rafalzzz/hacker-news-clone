@@ -9,15 +9,14 @@ export const Posts = memo(() => {
 
   const [postsType, setPostsType] = useState('news');
   const [page, setPage] = useState(1)
-  const [postID, setPostID] = useState(0)
 
   const dispatch = useDispatch();
   const handleFetchPosts = useCallback((postsType, page) => {
     dispatch(fetchPostsStarted({ type: postsType, page: page}));
   }, []);
 
-  const handleFetchComments = useCallback((postID) => {
-    dispatch(fetchCommentsStarted({ id: postID }));
+  const handleFetchComments = useCallback((id) => {
+    dispatch(fetchCommentsStarted({ id: id }));
   }, []);
 
   const handleChangePostsType = e => {
@@ -31,13 +30,8 @@ export const Posts = memo(() => {
     handleFetchPosts(postsType, page)
   }
 
-  const handleChangePostID = (id) => {
-    setPostID(id);
-  }
-
-  const handleLoadComments = (id) => {
-    setPostID(id);
-    handleFetchComments(postID)
+  const handleLoadComments = (e) => {
+    handleFetchComments(e.target.value)
   }
 
 const posts = useSelector(selectPosts);
@@ -48,14 +42,10 @@ return (
       handleChangePostsType={handleChangePostsType}
       handleLoadNextPage={handleLoadNextPage}
       handleFetchPosts={handleFetchPosts}
-      handleChangePostID={handleChangePostID}
       postsType={postsType}
       page={page}
       posts={posts}
-      postID={postID}
       handleLoadComments={handleLoadComments}
-
-      /* postById={postById} */
     />
   );
 });
