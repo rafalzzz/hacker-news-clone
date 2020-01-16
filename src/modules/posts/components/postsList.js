@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import {PostTitle} from './postTitle'
 import {PostFooter} from './postFooter'
 
-export const PostsList = ({ handleLoadNextPage, handleFetchPosts, handleLoadComments, postsType, page, posts }) => {
+export const PostsList = ({ handleLoadNextPage, handleFetchPosts, handleLoadComments, handleLoadUser, postsType, page, posts }) => {
 
     useEffect(() => {
       handleFetchPosts("news", 1)
@@ -31,6 +31,7 @@ export const PostsList = ({ handleLoadNextPage, handleFetchPosts, handleLoadComm
             added={p.time_ago}
             comments_count={p.comments_count}
             postID={p.id}
+            handleLoadUser={handleLoadUser}
           />
         </li>
       ))}

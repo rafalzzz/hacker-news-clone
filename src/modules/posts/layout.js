@@ -4,17 +4,18 @@ import { Switch, Route, Link } from "react-router-dom";
 
 
 import {buttons} from './consts/index'
+import {About} from '../about/index'
 import {PostsList} from './components/postsList'
 import {Comments} from '../comments/index'
+import {User} from '../user/index'
 
-export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleFetchPosts, handleLoadComments, postsType, page, posts }) => {
+
+export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleFetchPosts, handleLoadComments, handleLoadUser, postsType, page, posts }) => {
 
   return (
     <div>
       <div style={{borderBottom: '#007bff solid 1px'}}>
-        <Link to="/">
-          {buttons.map(button => <button type="button" className={button.className} onClick={handleChangePostsType} value={button.value}>{button.text} </button>)}
-        </Link>
+          {buttons.map(button => <Link to={button.link}><button type="button" key={button.id} className={button.className} onClick={handleChangePostsType} value={button.value}>{button.text} </button></Link>)}
       </div>
       <div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
         <Switch>
@@ -23,14 +24,20 @@ export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleF
               handleLoadNextPage={handleLoadNextPage}
               handleFetchPosts={handleFetchPosts}
               handleLoadComments={handleLoadComments}
+              handleLoadUser={handleLoadUser}
               posts={posts}
               postsType={postsType}
               page={page}
             />
           </Route>
           <Route path="/item">
-            <Comments
-          />
+            <Comments />
+          </Route>
+          <Route path="/user">
+            <User />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
         </Switch>
       </div>

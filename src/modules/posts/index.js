@@ -1,8 +1,11 @@
 import React, { memo, useState, useCallback } from 'react';
 import { PostsLayout } from './layout';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchPostsStarted } from '../../store/posts/actions';
 import { fetchCommentsStarted } from '../../store/comments/actions';
+import { fetchUserStarted } from '../../store/user/actions';
+
 import { selectPosts } from '../../store/posts/selectors';
 
 export const Posts = memo(() => {
@@ -17,6 +20,10 @@ export const Posts = memo(() => {
 
   const handleFetchComments = useCallback((id) => {
     dispatch(fetchCommentsStarted({ id: id }));
+  }, []);
+
+  const handleFetchUser = useCallback((name) => {
+    dispatch(fetchUserStarted({ name: name }));
   }, []);
 
   const handleChangePostsType = e => {
@@ -34,6 +41,12 @@ export const Posts = memo(() => {
     handleFetchComments(e.target.value)
   }
 
+  const handleLoadUser = (e) => {
+    handleFetchUser(e.target.value)
+  }
+
+  
+
 const posts = useSelector(selectPosts);
 /* const postById = useSelector(selectPostById(22002062)); */
 
@@ -46,6 +59,7 @@ return (
       page={page}
       posts={posts}
       handleLoadComments={handleLoadComments}
+      handleLoadUser={handleLoadUser}
     />
   );
 });
