@@ -15,7 +15,15 @@ export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleF
   return (
     <div>
       <div style={{borderBottom: '#007bff solid 1px'}}>
-          {buttons.map(button => <Link to={button.link}><button type="button" key={button.id} className={button.className} onClick={handleChangePostsType} value={button.value}>{button.text} </button></Link>)}
+          {buttons.map(button => <Link to={button.link}>
+            <button type="button" 
+            key={button.id} 
+            className={button.className} 
+            onClick={handleChangePostsType} 
+            value={button.value}>
+              {button.text} 
+            </button>
+            </Link>)}
       </div>
       <div className="container text-center col-xl-5" style={{marginTop: '10px'}}>
         <Switch>

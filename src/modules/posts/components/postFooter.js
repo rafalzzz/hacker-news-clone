@@ -13,7 +13,10 @@ export const PostFooter = ({ points_count, user, added, postID, comments_count, 
         { user && 
         <span> {points_count} {points} by 
         <Link to={`/user/${user}`}>
-            <button className="btn btn-link text-muted 6px ml-1 mr-1" style={userButtonStyles} onClick={handleLoadUser} value={user}>
+            <button className="btn btn-link text-muted 6px ml-1 mr-1" 
+            style={userButtonStyles} 
+            onClick={handleLoadUser} 
+            value={user}>
                 {user} 
                 </button>  
         </Link> 
@@ -22,7 +25,10 @@ export const PostFooter = ({ points_count, user, added, postID, comments_count, 
         {show_comments && 
         <span> | 
             <Link to={`/item/${postID}`}>
-                <button className="btn btn-link text-muted 6px ml-1" style={commentsButtonStyles} onClick={handleLoadComments} value={postID}>
+                <button className="btn btn-link text-muted 6px ml-1" 
+                style={commentsButtonStyles} 
+                onClick={handleLoadComments} 
+                value={postID}>
                          {comments_count} {comments} 
                       </button>  
             </Link> 

@@ -8,9 +8,15 @@ export const CommentsFooter = ({ points_count, user, added, handleLoadUser }) =>
 
     return(
     <p><small>
-        { user && <span>{points_count} {points} by <Link to={`/user/${user}`}><button className="btn btn-link text-muted 6px ml-0 mr-0" style={userButtonStylesCommentsFooter} onClick={handleLoadUser} value={user}>
-                {user} 
-                </button></Link> </span>} {added}
+        { user && <span>{points_count} {points} by 
+            <Link to={`/user/${user}`}>
+                <button className="btn btn-link text-muted 6px ml-0 mr-0" 
+                style={userButtonStylesCommentsFooter} 
+                onClick={handleLoadUser} 
+                value={user}>
+                    {user} 
+                </button>
+            </Link> </span>} {added}
     </small></p>
     )
 };

@@ -14,28 +14,52 @@ export const CommentsList = ({ postInfo, handleLoadUser }) => {
       postInfo.comments.map(comment => (
         <div className={commentsDivClassName} key={comment.id} style={commentsDivStyles}>
           <div>
-            <p style={{fontSize: '14px'}}><Link to={`/user/${comment.user}`}><button className="btn btn-link text-muted 6px ml-0 mr-0" style={userButtonStyles} onClick={handleLoadUser} value={comment.user}>
-                {comment.user} 
-                </button></Link> {comment.time_ago}</p>
+            <p style={{fontSize: '14px'}}>
+              <Link to={`/user/${comment.user}`}>
+                <button className="btn btn-link text-muted 6px ml-0 mr-0" 
+                style={userButtonStyles} 
+                onClick={handleLoadUser} 
+                value={comment.user}>
+                  {comment.user} 
+                </button>
+                </Link> {comment.time_ago}</p>
             {ReactHtmlParser(comment.content)}
           </div>
           {comment.comments.map(comment => (
           <div className={commentsDivClassName} key={comment.id} style={commentsDivStyles}>
-              <p style={{fontSize: '14px'}}><Link to={`/user/${comment.user}`}><button className="btn btn-link text-muted 6px ml-0 mr-0" style={userButtonStyles} onClick={handleLoadUser} value={comment.user}>
-                {comment.user} 
-                </button></Link> {comment.time_ago}</p>
+              <p style={{fontSize: '14px'}}>
+                <Link to={`/user/${comment.user}`}>
+                  <button className="btn btn-link text-muted 6px ml-0 mr-0" 
+                  style={userButtonStyles} 
+                  onClick={handleLoadUser} 
+                  value={comment.user}>
+                    {comment.user} 
+                </button>
+                </Link> {comment.time_ago}</p>
               {ReactHtmlParser(comment.content)}
             {comment.comments.map(comment => (
             <div className={commentsDivClassName} key={comment.id} style={commentsDivStyles}>
-                <p style={{fontSize: '14px'}}><Link to={`/user/${comment.user}`}><button className="btn btn-link text-muted 6px ml-0 mr-0" style={userButtonStyles} onClick={handleLoadUser} value={comment.user}>
+                <p style={{fontSize: '14px'}}>
+                  <Link to={`/user/${comment.user}`}>
+                    <button className="btn btn-link text-muted 6px ml-0 mr-0" 
+                    style={userButtonStyles} 
+                    onClick={handleLoadUser} 
+                    value={comment.user}>
                 {comment.user} 
-                </button></Link> {comment.time_ago}</p>
+                </button>
+                </Link> {comment.time_ago}</p>
                 {ReactHtmlParser(comment.content)}
               {comment.comments.map(comment => (
               <div className={commentsDivClassName} key={comment.id} style={commentsDivStyles}>
-                  <p style={{fontSize: '14px'}}><Link to={`/user/${comment.user}`}><button className="btn btn-link text-muted 6px ml-0 mr-0" style={userButtonStyles} onClick={handleLoadUser} value={comment.user}>
+                  <p style={{fontSize: '14px'}}>
+                    <Link to={`/user/${comment.user}`}>
+                      <button className="btn btn-link text-muted 6px ml-0 mr-0" 
+                      style={userButtonStyles} 
+                      onClick={handleLoadUser} 
+                      value={comment.user}>
                 {comment.user} 
-                </button></Link> {comment.time_ago}</p>
+                </button>
+                </Link> {comment.time_ago}</p>
                   {ReactHtmlParser(comment.content)}
               </div>
       ))}

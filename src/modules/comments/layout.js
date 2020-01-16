@@ -8,7 +8,8 @@ export const CommentsLayout = ({ postInfo, handleLoadUser }) => {
 
   return (
     <div>
-      <div className="container text-center pt-3 pb-3" style={{marginTop: '10px', borderBottom: '#ebebeb solid 15px'}}>
+      <div className="container text-center pt-3 pb-3" 
+      style={{marginTop: '10px', borderBottom: '#ebebeb solid 15px'}}>
         <CommentsTitle 
           title={postInfo.title}
           domain={postInfo.domain}
