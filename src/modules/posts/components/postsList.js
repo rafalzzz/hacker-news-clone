@@ -3,10 +3,10 @@ import React, { useEffect } from 'react';
 import {PostTitle} from './postTitle'
 import {PostFooter} from './postFooter'
 
-export const PostsList = ({ handleLoadNextPage, handleFetchPosts, handleLoadComments, handleLoadUser, postsType, page, posts }) => {
+export const PostsList = ({ handleLoadPosts, handleLoadNextPage, handleFetchPosts, handleLoadComments, handleLoadUser, postsType, page, posts }) => {
 
     useEffect(() => {
-      handleFetchPosts("news", 1)
+      handleFetchPosts('news', 1)
     }, []);
   
     useEffect(() => {

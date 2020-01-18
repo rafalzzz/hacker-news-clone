@@ -10,7 +10,7 @@ import {Comments} from '../comments/index'
 import {User} from '../user/index'
 
 
-export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleFetchPosts, handleLoadComments, handleLoadUser, postsType, page, posts }) => {
+export const PostsLayout = ({ handleLoadPosts, handleChangePostsType, handleLoadNextPage, handleFetchPosts, handleLoadComments, handleLoadUser, postsType, page, posts }) => {
 
   return (
     <div>
@@ -29,6 +29,7 @@ export const PostsLayout = ({ handleChangePostsType, handleLoadNextPage, handleF
         <Switch>
           <Route exact path="/">
             <PostsList
+              handleLoadPosts={handleLoadPosts}
               handleLoadNextPage={handleLoadNextPage}
               handleFetchPosts={handleFetchPosts}
               handleLoadComments={handleLoadComments}
