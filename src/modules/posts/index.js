@@ -27,37 +27,21 @@ export const Posts = memo(() => {
     dispatch(fetchUserStarted({ name: name }));
   }, []);
 
-/*   const handleChangePostsType = e => {
-    setPostArray([])
-    setPostsType(e.target.value);
-    setPage(2);
-    handleFetchPosts(e.target.value, page)
-    for (let i=0; i<posts.length; i++) {
-    postsArray.push(posts[i])
-    }
-  } */
-
   const handleLoadPosts = (type, page) => {
     handleFetchPosts(type, page)
     setPostArray(posts)
     }
 
   const handleChangePostsType = e => {
-    setPostArray(posts)
+    setPostArray([])
     setPostsType(e.target.value);
     setPage(1);
     handleFetchPosts(e.target.value, page)
   }
 
   const handleLoadNextPage = (e) => {
-/*     for (let i=0; i<posts.length; i++) {
-      postsArray.push(posts[i])
-    } */
     setPage(page + 1);
     handleFetchPosts(postsType, page)
-    for (let i=0; i<posts.length; i++) {
-    postsArray.push(posts[i])
-    }
   }
 
   const handleLoadComments = (e) => {
@@ -68,18 +52,10 @@ export const Posts = memo(() => {
     handleFetchUser(e.target.value)
   }
 
-/*   const loadPosts = (postsArray, posts) => {
-    if (postsArray.length < 30) {
-      return posts
-    }
-    if (postsArray.length > 30) {
-      return postsArray
-    }
-  } */
-
   const posts = useSelector(selectPosts);
-
-  console.log('Posty',postsArray)
+  for (let i=0; i<posts.length; i++) {
+    postsArray.push(posts[i])
+    }
 
 return (
   <PostsLayout
