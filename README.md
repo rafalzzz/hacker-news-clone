@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## First of all
 
 Install npm packages (run: npm install).<br />
-Later create file ".env" in project directory and paste this: 
+Create file ".env" in project directory and paste this: 
 
 REACT_APP_API_URL=https://api.hnpwa.com/v0/
 
