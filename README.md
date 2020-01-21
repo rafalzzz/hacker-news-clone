@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## First of all
+
+You have to create file with .env extension in poject directory and paste this: 
+REACT_APP_API_URL=https://api.hnpwa.com/v0/
+
 ## Available Scripts
 
 In the project directory, you can run:
