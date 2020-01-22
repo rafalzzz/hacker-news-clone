@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## About this App
+
+This is a simple Hacker News clone. I used hnpwa-api as a backend.
+
 ## First of all
 
 Install npm packages (run: npm install).<br />
