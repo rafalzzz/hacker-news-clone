@@ -1,11 +1,11 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import {PostTitle} from './postTitle'
 import {PostFooter} from './postFooter'
 
 export const PostsList = ({ handleLoadNextPage, handleFetchPosts, handleLoadComments, handleLoadUser, postsType, page, posts }) => {
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       handleFetchPosts('news', 1)
     }, []);
   
