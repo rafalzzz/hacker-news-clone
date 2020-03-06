@@ -4,13 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This is a simple Hacker News clone. I used hnpwa-api as a backend.
 
-## First of all
-
-Install npm packages (run: npm install).<br />
-Create file ".env" in project directory and paste this: 
-
-REACT_APP_API_URL=https://api.hnpwa.com/v0/
-
 ## Available Scripts
 
 In the project directory, you can run:
