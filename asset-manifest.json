@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/app-examplehost/static/css/main.acf834fb.chunk.css",
-    "main.js": "/app-examplehost/static/js/main.ad9fc026.chunk.js",
-    "main.js.map": "/app-examplehost/static/js/main.ad9fc026.chunk.js.map",
-    "runtime-main.js": "/app-examplehost/static/js/runtime-main.f8bfdd5a.js",
-    "runtime-main.js.map": "/app-examplehost/static/js/runtime-main.f8bfdd5a.js.map",
-    "static/css/2.47e06e2e.chunk.css": "/app-examplehost/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.85f4c03b.chunk.js": "/app-examplehost/static/js/2.85f4c03b.chunk.js",
-    "static/js/2.85f4c03b.chunk.js.map": "/app-examplehost/static/js/2.85f4c03b.chunk.js.map",
-    "index.html": "/app-examplehost/index.html",
-    "precache-manifest.b9591fa2ec3ea64da47afffc6fbaad65.js": "/app-examplehost/precache-manifest.b9591fa2ec3ea64da47afffc6fbaad65.js",
-    "service-worker.js": "/app-examplehost/service-worker.js",
-    "static/css/2.47e06e2e.chunk.css.map": "/app-examplehost/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.acf834fb.chunk.css.map": "/app-examplehost/static/css/main.acf834fb.chunk.css.map",
-    "static/js/2.85f4c03b.chunk.js.LICENSE": "/app-examplehost/static/js/2.85f4c03b.chunk.js.LICENSE"
+    "main.css": "/app-example/static/css/main.acf834fb.chunk.css",
+    "main.js": "/app-example/static/js/main.18b890b6.chunk.js",
+    "main.js.map": "/app-example/static/js/main.18b890b6.chunk.js.map",
+    "runtime-main.js": "/app-example/static/js/runtime-main.7ed744ce.js",
+    "runtime-main.js.map": "/app-example/static/js/runtime-main.7ed744ce.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/app-example/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.85f4c03b.chunk.js": "/app-example/static/js/2.85f4c03b.chunk.js",
+    "static/js/2.85f4c03b.chunk.js.map": "/app-example/static/js/2.85f4c03b.chunk.js.map",
+    "index.html": "/app-example/index.html",
+    "precache-manifest.396357c268767c1ef05b6430d0f4c9e6.js": "/app-example/precache-manifest.396357c268767c1ef05b6430d0f4c9e6.js",
+    "service-worker.js": "/app-example/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/app-example/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.acf834fb.chunk.css.map": "/app-example/static/css/main.acf834fb.chunk.css.map",
+    "static/js/2.85f4c03b.chunk.js.LICENSE": "/app-example/static/js/2.85f4c03b.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.f8bfdd5a.js",
+    "static/js/runtime-main.7ed744ce.js",
     "static/css/2.47e06e2e.chunk.css",
     "static/js/2.85f4c03b.chunk.js",
     "static/css/main.acf834fb.chunk.css",
-    "static/js/main.ad9fc026.chunk.js"
+    "static/js/main.18b890b6.chunk.js"
   ]
 }
