@@ -1,8 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About this app
 
-## About this App
+This project was bootstrapped with Create React App.<br />
 
-This is a simple Hacker News clone. I used hnpwa-api as a backend.
+This is a simple Hacker News clone.<br />
+During creation of this app I took care of things like comments section,<br />
+info about user etc. I used hnpwa-api as a backend.<br />
+
+In this App I used:<br />
+•	bootstrap to design responsive layout,<br />
+•	redux to manage state,<br />
+•	redux-saga to handle asynchronous actions (i.e. like data fetching),<br />
+•	react-router and react-router-dom to navigate components ,<br />
+•	axios to fetch data,<br />
+•	react-html-parser to convert HTML strings into React components.<br />
+
+Screenshots:<br />
+
+![GitHub Logo](/screenshots/main.png)
+
+![GitHub Logo](/screenshots/comments section.png)
+
+![GitHub Logo](/screenshots/info about user.png)
 
 ## Available Scripts
 
