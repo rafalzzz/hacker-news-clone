@@ -10,7 +10,7 @@ In this App I used:<br />
 •	bootstrap to design responsive layout,<br />
 •	redux to manage state,<br />
 •	redux-saga to handle asynchronous actions (i.e. like data fetching),<br />
-•	react-router and react-router-dom to navigate components ,<br />
+•	react-router and react-router-dom to navigate components,<br />
 •	axios to fetch data,<br />
 •	react-html-parser to convert HTML strings into React components.<br />
 
