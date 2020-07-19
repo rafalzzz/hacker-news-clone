@@ -3,8 +3,8 @@
 This project was bootstrapped with Create React App.<br />
 
 This is a simple Hacker News clone.<br />
-During creation of this app I took care of things like comments section,<br />
-info about user etc. I used hnpwa-api as a backend.<br />
+During creation of this app I took care of things like comments section,info about user etc.<br />
+I used hnpwa-api as a backend.<br />
 
 In this App I used:<br />
 •	bootstrap to design responsive layout,<br />
