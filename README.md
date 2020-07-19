@@ -18,9 +18,9 @@ Screenshots:<br />
 
 ![GitHub Logo](/screenshots/main.png)
 
-![GitHub Logo](/screenshots/comments section.png)
+![GitHub Logo](/screenshots/comments-section.png)
 
-![GitHub Logo](/screenshots/info about user.png)
+![GitHub Logo](/screenshots/info-about-user.png)
 
 ## Available Scripts
 
